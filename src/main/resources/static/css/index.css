@@ -1,0 +1,86 @@
+:root{
+    --roboto :'Roboto', sans-serif;
+}
+body{
+    background-color: #131419;
+    font-family: var(--roboto);
+}
+h1{
+    color: aliceblue;
+    text-align: center;
+}
+.encabesado-tabla-socios{
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    border: solid 1px rgb(40, 44, 58);
+}
+
+.cuerpo-tabla-socios{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: left;
+    color: aliceblue;
+    /* border: solid 1px rgb(92, 92, 92); */
+    
+}
+
+.cuerpo-tabla-socios p, .cuerpo-tabla-socios div{
+    border: solid 1px rgb(40, 44, 58);
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    
+}
+
+.contenedor-tabla-socios{
+    display: grid;
+    grid-column: repeat(1,1fr);
+    width: 80%;
+    margin: auto;
+    color: aliceblue;
+    font-family: var(--roboto);
+}
+
+.boton-editar{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: rgb(0, 104, 200);
+    border-radius: 0.5rem;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.boton-eliminar{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: rgb(200, 0, 0);
+    border-radius: 0.5rem;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.boton-agregar{
+    text-decoration: none;
+    color: aliceblue;
+    background-color: rgb(0, 183, 104);
+    border-radius: 0.5rem;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 1rem;
+}
