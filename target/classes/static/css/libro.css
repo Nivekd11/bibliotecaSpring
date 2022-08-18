@@ -1,0 +1,92 @@
+
+:root{
+    --roboto :'Roboto', sans-serif;
+}
+body{
+    background-color: #131419;
+    font-family: var(--roboto);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: rgb(186, 186, 186);
+  -webkit-box-shadow: 0 0 0px 1000px #131419 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.logo-form{
+    width: 100px;
+    grid-column: 1/3;
+    margin: auto;
+    margin-bottom: -1rem;
+}
+
+.contenedor-agregar-socio{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.formulario-agregar{
+    color: rgb(209, 209, 209);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 60%;
+    gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(145deg, #14151b, #111217);
+    box-shadow:  7px 7px 9px #0a0b0e,
+             -7px -7px 9px #1c1d25;
+    margin-top:2rem;
+    
+}
+
+.formulario-agregar h1{
+    grid-column: 1/3;
+    text-align: center;
+}
+
+.formulario-agregar div{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.formulario-agregar div input{
+    background: #131419;
+box-shadow: inset 6px 6px 5px #0c0d10,
+            inset -6px -6px 5px #1a1b22;    
+    border: none;
+    border-radius: 0.5rem;
+    height: 40px;
+    margin-top: 0.5rem;
+    color: azure;
+}
+
+
+.boton-agregar{
+    height: 40px;
+    grid-column: 1/3;
+    width: 50%;
+    margin: auto;
+    color:#a92ab4;
+    font-weight: 700;
+    background: linear-gradient(145deg, #14151b, #111217);
+    box-shadow:  6px 6px 8px #0c0d10,
+             -6px -6px 8px #1a1b22;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
