@@ -36,7 +36,7 @@ public class ControladorInicial {
          String saludar = "Hola mundo kevin compartirrr";
          model.addAttribute("saludo", saludar);
         // model.addAttribute("mensaje", aplicationProperies);
-         model.addAttribute("personas", socios);
+         model.addAttribute("Socios", socios);
         return "index";
     }
 }

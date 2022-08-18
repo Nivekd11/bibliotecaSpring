@@ -15,7 +15,7 @@
     <!-- <p th:text="${mensaje}"></p> -->
     <a class="boton-agregar" th:href="@{/agregar}">Agregar Socio</a>
     <!-- <a href="@{/actualizar}">Actualizar Socio</a> -->
-    <div th:if="${personas !=null and !personas.empty}">
+    <div th:if="${Socios !=null and !Socios.empty}">
         <div class="contenedor-tabla-socios">
             <div class="encabesado-tabla-socios">
                 <h3>Nombre</h3>
@@ -23,18 +23,18 @@
                 <h3>Editar</h3>
                 <h3>Eliminar</h3>
             </div>
-            <div class="cuerpo-tabla-socios"th:each="persona : ${personas}">
-                <p th:text="${persona.nombre}"></p>
-                <p  th:text="${persona.curp}"></p>
-                <div><a th:href="@{/agregar}" class="boton-editar">Editar</a></div>
-                <div><a href="" class="boton-eliminar">Eliminar</a></div>
+            <div class="cuerpo-tabla-socios"th:each="socio : ${Socios}">
+                <p th:text="${socio.nombre}"></p>
+                <p  th:text="${socio.curp}"></p>
+                <div><a th:href="@{/editar/}  + ${socio.curp}" class="boton-editar">Editar</a></div>
+                <div><a th:href="@{/eliminar/}+ ${socio.curp}" class="boton-eliminar">Eliminar</a></div>
                 
             </div>
         </div>
         
         
     </div>
-    <div  th:if="${personas ==null or personas.empty}">
+    <div  th:if="${Socios ==null or Socios.empty}">
         <p>No hay persona en la pagina</p>
     </div>
     
