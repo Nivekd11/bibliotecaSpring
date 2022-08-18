@@ -29,31 +29,32 @@ public class SocioServiceImpl implements SocioService{
     @Override
     @Transactional
     public void guardar(Socio socio){
-        conexion = ConexionBD.connectDatabase();
-        PreparedStatement ps = null;
-        String sql = "INSERT INTO socio (curp,nombre,fecha_nacimiento,telefono,correo,direccion,estatus) VALUES(?,?,?,?,?,?,?);";
-
-        try {
-            ps = conexion.prepareStatement(sql);
-            ps.setString(1, socio.getCurp());
-            ps.setString(2, socio.getNombre());
-            ps.setDate(3, socio.getFecha_nacimiento());
-            ps.setString(4, socio.getTelefono());
-            ps.setString(5, socio.getCorreo());
-            ps.setString(6, socio.getDireccion());
-            ps.setObject(7, socio.getEstatus(), Types.OTHER);
-            ps.executeQuery();
-
-        } catch (Exception e) {
-            System.err.println(e);
-
-        } finally {
-            try {
-                conexion.close();
-            } catch (SQLException e) {
-                // System.err.println(e);
-            }
-        }
+        socioDao.save(socio);
+//        conexion = ConexionBD.connectDatabase();
+//        PreparedStatement ps = null;
+//        String sql = "INSERT INTO socio (curp,nombre,fecha_nacimiento,telefono,correo,direccion,estatus) VALUES(?,?,?,?,?,?,?);";
+//
+//        try {
+//            ps = conexion.prepareStatement(sql);
+//            ps.setString(1, socio.getCurp());
+//            ps.setString(2, socio.getNombre());
+//            ps.setDate(3, socio.getFecha_nacimiento());
+//            ps.setString(4, socio.getTelefono());
+//            ps.setString(5, socio.getCorreo());
+//            ps.setString(6, socio.getDireccion());
+//            ps.setString(7, socio.getEstatus());
+//            ps.executeQuery();
+//
+//        } catch (Exception e) {
+//            System.err.println(e);
+//
+//        } finally {
+//            try {
+//                conexion.close();
+//            } catch (SQLException e) {
+//                // System.err.println(e);
+//            }
+//        }
     }
 
     @Override

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 @Slf4j
@@ -22,8 +24,6 @@ public class ControladorSocios {
     @GetMapping("/agregar")
     public String agregar(Socio socio){
 
-
-
         return "SocioAgregar";
     }
 
@@ -35,4 +35,18 @@ public class ControladorSocios {
 
         return "redirect:/";
     }
+
+    @GetMapping("/editar/{curp}")
+    public String editar(Socio socio,Model model) {
+        socio = socioService.buscarSocio(socio);
+        model.addAttribute("socio", socio);
+        return "SocioAgregar";
+    }
+
+    @GetMapping("/eliminar/{curp}")
+    public String eliminar(Socio socio){
+        socioService.eliminar(socio);
+        return "redirect:/";
+    }
+    
 }
