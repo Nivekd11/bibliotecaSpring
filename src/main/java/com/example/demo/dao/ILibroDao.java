@@ -12,6 +12,6 @@ import com.example.demo.domain.Libro;
 public interface ILibroDao extends CrudRepository<Libro, String> {
 
     // public abstract Libro findBytitulo(@Param(":var_param") String titulo);
-    @Query(value = "select idlibro,titulo,edicion,ejemplares,isbn,ideditorial,valor from Libro where Libro.idlibro < ?", nativeQuery = true)
+    @Query(value = "select idlibro,titulo,edicion,ejemplares,isbn,ideditorial,valor from Libro where Libro.idlibro <= ?", nativeQuery = true)
     List<Libro> buscarPorId(int id);
 }

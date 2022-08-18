@@ -1,6 +1,7 @@
 package com.example.demo.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -37,8 +41,16 @@ public class Libro implements Serializable {
     private String edicion;
     private String isbn;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = { CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE, CascadeType.PERSIST })
     @JoinColumn(name = "ideditorial")
     private Editorial editorial;
+
+    @ManyToMany
+    @JoinTable(name = "autor_libro", joinColumns = @JoinColumn(name = "idlibro"), inverseJoinColumns = @JoinColumn(name = "idautor"))
+    private List<Autor> autores;
+
+    public String toString() {
+        return "T: " + titulo + ".\nE: " + editorial + ".'nAs: " + autores;
+    }
 
 }
